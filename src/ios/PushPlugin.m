@@ -106,7 +106,7 @@
 #endif
     }
 
-    notificationTypes |= UIRemoteNotificationTypeNewsstandContentAvailability;
+    // notificationTypes |= UIRemoteNotificationTypeNewsstandContentAvailability;
 #if __IPHONE_OS_VERSION_MAX_ALLOWED >= 80000
     UserNotificationTypes |= UIUserNotificationActivationModeBackground;
 #endif
@@ -254,7 +254,7 @@
     self.callbackId = command.callbackId;
 
     NSMutableDictionary* options = [command.arguments objectAtIndex:0];
-    int badge = 99; //[[options objectForKey:@"badge"] intValue] ?: 0;
+    int badge = [[options objectForKey:@"badge"] intValue] ?: 0;
 
     [[UIApplication sharedApplication] setApplicationIconBadgeNumber:badge];
 
